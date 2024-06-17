@@ -1,11 +1,21 @@
 /* GLOBAL*/
+:root {
+  --primary: #ea625c;
+  --text-color: #333;
+}
+
+
 html {
   box-sizing: border-box;
   height: 100%;
   scroll-behavior: smooth;
 }
 
-
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
 
 body {
@@ -14,11 +24,11 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   background-color: #fff;
-  color: #000;
+  color: var(--text-color);
 }
 
 img {
@@ -30,7 +40,7 @@ img {
 /* CONTAINER */
 .container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   padding-left: 50px;
   padding-right: 50px;
   margin-right: auto;
@@ -38,39 +48,73 @@ img {
 }
 
 
-  /* HEADER */
-  .header {
-    display: flex;
-  }
+/* SITE-HEADER */
+.site-header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  display: flex;
+}
 
-  .site-header-container {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-    padding: 0;
-  }
+.site-header-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 0;
+}
 
-  .sitenav {
-    display: flex;
-    align-items: flex-end;
-    margin-left: 537px;
-  }
+.site-header-logo {
+  margin-right: auto;
+  transition: opacity 0.3 ease;
+}
 
-  .site-logo {
-    margin-left: 125px;
-    justify-content: start;
-  }
 
-  .sitenav-list {
-    display: flex;
-    justify-content: end;
-  }
+.site-header-logo-img {
+  display: block;
+  width: 35px;
+  height: 42px;
+  object-fit: contain;
+}
 
-  .sitenav-item {
-    list-style: none;
-  }
 
-  .sitenav-link {
-    text-decoration: none;
-    color: #000;
-  }
+/* SITENAV */
+.sitenav {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 40px;
+}
+
+.sitenav-list {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.sitenav-item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.sitenav-link {
+  display: block;
+  padding-top: 6px;
+  padding-bottom: 3px;
+  font-size: 15px;
+  color: #333;
+  text-decoration: none;
+}
+
+
+.sitenav-link:hover {
+  border: #333;
+  border-bottom: 3px solid #333;
+}
+
+
+/* SEARCH-FORM */
+.search-form-input {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  border: 0;
+  border-bottom: 1px solid #333;
+}
